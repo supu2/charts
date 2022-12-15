@@ -3,27 +3,32 @@ name: Release Charts
 on:
   push:
     branches:
-      - master
+      - main
+
 jobs:
   release:
+    # depending on default permission settings for your org (contents being read-only or read-write for workloads), you will have to add permissions
+    # see: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
       - name: Configure Git
         run: |
-          git fetch --prune --unshallow
-          git config --global user.name "$GITHUB_ACTOR"
-          git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
       - name: Install Helm
-        run: |
-          curl -fsSLo get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-          chmod 700 get_helm.sh
-          ./get_helm.sh
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.0.0
+        uses: azure/setup-helm@v3
         with:
-          charts_dir: itscontained/
-          charts_repo_url: https://supu2.github.com
+          version: v3.10.0
+
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.4.1
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
