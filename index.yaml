@@ -1,0 +1,78 @@
+apiVersion: v1
+entries:
+  haste-server:
+  - apiVersion: v2
+    appVersion: 2021.04.19
+    created: "2022-12-17T13:48:43.971370132Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 2.3.0
+    description: Simple text sharing
+    digest: 3fc155ca3e2ae5b99e8909873ab6b72d1581b8b5a2a5fdd50b2874c027468918
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/haste
+    icon: https://github.com/seejohnrun/haste-server/blob/master/static/logo.png
+    keywords:
+    - haste
+    - hastebin
+    - haste-server
+    - pastebin
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: rwalt@pm.me
+      name: rwaltr
+    name: haste-server
+    sources:
+    - https://github.com/seejohnrun/haste-server
+    - https://github.com/rwaltr/haste-server
+    urls:
+    - https://github.com/supu2/charts/releases/download/haste-server-1.0.0/haste-server-1.0.0.tgz
+    version: 1.0.0
+  raw:
+  - apiVersion: v2
+    created: "2022-12-17T13:48:44.080153834Z"
+    description: A place for all the Kubernetes resources which don't already have
+      a home
+    digest: f03a61702ee05df8a605ae7376397723acd3276670d058c8cc35796d4ae476af
+    home: https://github.com/itscontained/charts/blob/master/itscontained/raw
+    keywords:
+    - raw
+    - incubator
+    - incubator-raw
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: raw
+    sources:
+    - https://github.com/helm/charts/blob/master/incubator/raw
+    urls:
+    - https://github.com/supu2/charts/releases/download/raw-v0.2.5/raw-v0.2.5.tgz
+    version: v0.2.5
+  traefik:
+  - apiVersion: v2
+    appVersion: 2.4.8
+    created: "2022-12-17T13:48:44.266991122Z"
+    description: A Traefik based Kubernetes ingress controller
+    digest: 3406a15a67518279bfb5268da43f77e241010e8ecd0103f3c0430335c2b18024
+    home: https://traefik.io/
+    icon: https://raw.githubusercontent.com/traefik/traefik/v2.3/docs/content/assets/img/traefik.logo.png
+    keywords:
+    - traefik
+    - ingress
+    maintainers:
+    - email: emile@vauge.com
+      name: emilevauge
+    - email: daniel.tomcej@gmail.com
+      name: dtomcej
+    - email: ldez@traefik.io
+      name: ldez
+    name: traefik
+    sources:
+    - https://github.com/traefik/traefik
+    - https://github.com/traefik/traefik-helm-chart
+    type: application
+    urls:
+    - https://github.com/supu2/charts/releases/download/traefik-9.18.4/traefik-9.18.4.tgz
+    version: 9.18.4
+generated: "2022-12-17T13:48:44.267042622Z"
