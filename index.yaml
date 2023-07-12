@@ -28,6 +28,17 @@ entries:
     urls:
     - https://github.com/supu2/charts/releases/download/haste-server-1.0.0/haste-server-1.0.0.tgz
     version: 1.0.0
+  proxy:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-07-12T12:26:21.615661162Z"
+    description: A Helm chart for Kubernetes
+    digest: 187545276596ed5b6c9cbd2a2e2f963fd6971f7dfcf8ec09bcca759507a6ec07
+    name: proxy
+    type: application
+    urls:
+    - https://github.com/supu2/charts/releases/download/proxy-0.1.0/proxy-0.1.0.tgz
+    version: 0.1.0
   raw:
   - apiVersion: v2
     created: "2022-12-17T13:48:44.080153834Z"
@@ -75,4 +86,4 @@ entries:
     urls:
     - https://github.com/supu2/charts/releases/download/traefik-9.18.4/traefik-9.18.4.tgz
     version: 9.18.4
-generated: "2022-12-17T13:48:44.267042622Z"
+generated: "2023-07-12T12:26:21.907890812Z"
