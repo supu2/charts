@@ -1,6 +1,6 @@
-# itscontained/raw
+# supu2/raw
 
-The `itscontained/raw` chart takes a list of Kubernetes resources and
+The `supu2/raw` chart takes a list of Kubernetes resources and
 merges each resource with a default `metadata.labels` map and installs
 the result.
 
@@ -33,7 +33,7 @@ resources:
 #### STEP 2: Install your raw resources.
 
 ```
-helm install raw-priority-classes itscontained/raw -f raw-priority-classes.yaml
+helm install raw-priority-classes supu2/raw -f raw-priority-classes.yaml
 ```
 
 ### Templated resources
@@ -56,5 +56,5 @@ templates:
 #### STEP 2: Install your templated resources.
 
 ```
-helm install mysecret itscontained/raw -f values.yaml
+helm install mysecret supu2/raw -f values.yaml
 ```
