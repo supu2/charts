@@ -96,7 +96,8 @@ persistent:
   enabled: false
   size: 50Gi
 
-
+domains: |
+  .example.com
 config: |
   # Example rule allowing access from your local networks.
   # Adapt to list your (internal) IP networks from where browsing
@@ -142,14 +143,14 @@ config: |
   # INSERT YOUR OWN RULE(S) HERE TO ALLOW ACCESS FROM YOUR CLIENTS
   #
 
-  acl whitelist dstdomain .ubuntu.com wiki.squid-cache.org 
+  acl whitelist dstdomain "/etc/squid/domains.txt"
   http_access allow whitelist 
 
   # Example rule allowing access from your local networks.
   # Adapt localnet in the ACL section to list your (internal) IP networks
   # from where browsing should be allowed
-  http_access allow localnet
-  http_access allow localhost
+  http_access allow localnet whitelist
+  http_access allow localhost whitelist
 
   # And finally deny all other access to this proxy
   http_access deny all

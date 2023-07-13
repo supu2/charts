@@ -6,4 +6,6 @@ metadata:
 data:
   squid.conf: |
 {{ .Values.config | indent 4}}
+  domains.txt: |
+{{ .Values.domains | indent 4}}
 {{- end -}}

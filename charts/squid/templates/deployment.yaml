@@ -35,7 +35,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: {{ .Values.service.port }}
+              containerPort: 3128
               protocol: TCP
           livenessProbe:
             tcpSocket:
@@ -54,6 +54,12 @@ spec:
             mountPath: /etc/squid/squid.conf
             readOnly: true
             subPath: squid.conf
+        {{- end }}
+        {{- if .Values.domains }}
+          - name: config
+            mountPath: /etc/squid/domains.txt
+            readOnly: true
+            subPath: domains.txt
         {{- end }}
       volumes:
       {{- if .Values.config }}
