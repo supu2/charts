@@ -46,6 +46,8 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
+          - name: varlog
+            mountPath: /var/log/squid
         {{- if .Values.persistent.enabled }}
           - mountPath: /var/cache/squid
             name: cache
@@ -62,7 +64,15 @@ spec:
             readOnly: true
             subPath: domains.txt
         {{- end }}
+        - name: proxy-log
+          image: busybox:1.28
+          args: [/bin/sh, -c, 'tail -n+1 -F /var/log/squid/access.log']
+          volumeMounts:
+          - name: varlog
+            mountPath: /var/log/squid
       volumes:
+      - name: varlog
+        emptyDir: {}
       {{- if .Values.config }}
       - name: config
         configMap:
