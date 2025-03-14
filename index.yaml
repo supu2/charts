@@ -30,6 +30,16 @@ entries:
     version: 1.0.0
   proxy:
   - apiVersion: v2
+    appVersion: 1.16.1
+    created: "2025-03-14T13:50:10.150695937Z"
+    description: A Helm chart for Kubernetes
+    digest: 8f3101a40fd54b484689c6615555fc9a3a27beccc76d1d76326ccfa84eecb459
+    name: proxy
+    type: application
+    urls:
+    - https://github.com/supu2/charts/releases/download/proxy-0.1.1/proxy-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 1.16.0
     created: "2023-07-12T12:26:21.615661162Z"
     description: A Helm chart for Kubernetes
@@ -86,4 +96,4 @@ entries:
     urls:
     - https://github.com/supu2/charts/releases/download/traefik-9.18.4/traefik-9.18.4.tgz
     version: 9.18.4
-generated: "2023-07-12T12:26:21.907890812Z"
+generated: "2025-03-14T13:50:10.150709281Z"
